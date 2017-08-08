@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+   xmlns:context="http://www.springframework.org/schema/context"
+
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd    
+    ">
+
+   <bean id="head" class="com.sk.spring.LegoBlock">
+      <constructor-arg value="머리:파란색" />
+      <property name="block" ref="body"></property>
+   </bean>
+
+   <bean id="body" class="com.sk.spring.LegoBlock">
+      <constructor-arg value="몸통:회색" />
+      <property name="blocks">
+         <list>
+            <ref bean="left" />
+            <ref bean="right" />
+         </list>
+      </property>
+   </bean>
+   <bean id="left" class="com.sk.spring.LegoBlock">
+      <constructor-arg value="왼팔:빨간색" />
+      <property name="block" ref="sword"></property>
+   </bean>
+   <bean id="right" class="com.sk.spring.LegoBlock">
+      <constructor-arg value="오른팔:초록색" />
+   </bean>
+   <bean id="sword" class="com.sk.spring.LegoBlock">
+      <constructor-arg value="왼팔:칼" />
+   </bean>
+
+
+</beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd    
+    ">
+
+<context:annotation-config /> 
+
+<bean id="truck" class="com.sk.spring.Truck">
+		<constructor-arg value="truck1"/>
+		<constructor-arg value="yellow"/>
+		<constructor-arg ref="t1"/>
+		<constructor-arg ref="t2"/>
+		<property name="tire" ref="tire1"></property>
+</bean>
+<bean id="tire1" class="com.sk.spring.Tire">
+		<constructor-arg value="Left!!!!"/>      
+</bean>
+<bean id="t1" class="com.sk.spring.Tire">
+		<constructor-arg value="Left!!!!"/>      
+</bean>
+<bean id="t2" class="com.sk.spring.Tire">
+		<constructor-arg value="Right!!!!"/>      
+</bean>
+
+
+<bean id="car" class="com.sk.spring.Car">
+		<constructor-arg value="소나타^^^" />      
+		<constructor-arg value="gray" />      
+</bean>
+
+<bean id="car2" class="com.sk.spring.Car">
+		<constructor-arg value="아반떼~~~" />      
+		<constructor-arg value="gray" />      
+</bean>
+
+
+<bean id="service" class="com.sk.spring.CarService">
+</bean>
+	
+
+</beans>
